@@ -1,6 +1,5 @@
 function Create(){
   let string = document.createElement('tr');
-
   let arr =[];
 
   for (let i = 0; i < 5; i++) {
@@ -28,7 +27,7 @@ function Create(){
   arr[3].append(butDown);
   arr[4].append(butDelete);
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < arr.length; i++) {
     string.append(arr[i]);
   }
 
@@ -36,14 +35,14 @@ function Create(){
 }
 
 function Save(){
-  a = document.querySelectorAll("input")
+  arr = document.querySelectorAll("input")
   document.body.append('{');
 
-  for (let i = 0; i < a.length; i+=2) {
-    document.body.append('"' + a[i].value+ '":');
-    document.body.append('"' + a[i+1].value+ '"');
+  for (let i = 0; i < arr.length; i+=2) {
+    document.body.append('"' + arr[i].value+ '":');
+    document.body.append('"' + arr[i+1].value+ '"');
     
-    if (i+2 < a.length)
+    if (i+2 < arr.length)
       document.body.append(',');
   }
 
